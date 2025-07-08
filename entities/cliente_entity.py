@@ -33,6 +33,7 @@ class ClienteEntity:
         fecha_de_nacimiento: datetime,
         fecha_de_registro: datetime,
         contactos: List[ContactoEntity],
+        otros: dict
         ):
         self.id = id
         self.encodedkey = encodedkey
@@ -46,3 +47,4 @@ class ClienteEntity:
         self.fecha_de_registro = fecha_de_registro
         self.contactos = contactos
         self.esta_activo = esta_activo
+        self.otros = otros
