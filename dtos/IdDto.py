@@ -11,3 +11,10 @@ class MensajeDto(BaseModel):
     encodedkey: str
     fecha: str
     mensaje: str
+
+    def to_dict(self):
+        return {
+            "encodedkey": self.encodedkey,
+            "fecha": self.fecha,
+            "mensaje": self.mensaje
+        }
