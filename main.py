@@ -3,6 +3,7 @@ import uuid
 from fastapi import FastAPI
 
 from dtos.IdDto import MensajeDto
+from routes.ahorro_router import ahorro_router
 from routes.cliente_router import cliente_router
 
 app = FastAPI(
@@ -28,3 +29,5 @@ async def greet():
     return MensajeDto(**mensaje)
 
 app.include_router(cliente_router, prefix="/api/Clientes", tags=["Clientes"])
+
+app.include_router(ahorro_router, prefix="/api/Ahorros", tags=["Ahorros"])

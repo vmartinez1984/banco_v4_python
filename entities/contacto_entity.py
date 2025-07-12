@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-class ContactoEntity:
+class ContactoEntity:    
     nombre: str
     cuenta: str
     alias: str

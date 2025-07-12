@@ -64,3 +64,32 @@ Usuario
 - Sexo
 - correo
 - contraseña
+
+## Run app
+En ubuntu
+usar un entorno virtual (opcional, pero buena práctica)
+
+    Instala el módulo de entornos virtuales:
+```
+sudo apt install python3-venv
+```
+
+Crea el entorno virtual:
+```
+python3 -m venv venv
+```
+
+Activa el entorno virtual:
+```
+source venv/bin/activate
+```
+
+Instala con pip dentro del entorno:
+```
+pip install -r requirements.txt
+```
+
+
+```
+uvicorn main:app --reload
+```

@@ -1,2 +1,7 @@
-uri = "mongodb://root:123456@localhost:27017/?authMechanism=DEFAULT"
-db_name = "BancoDemo"
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+uri = os.getenv("uri")
+db_name = os.getenv("db_name")

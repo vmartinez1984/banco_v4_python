@@ -6,6 +6,13 @@ class IdDto(BaseModel):
     encodedkey: str
     fecha: str
 
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "encodedkey": self.encodedkey,
+            "fecha": self.fecha
+        }
+
 
 class MensajeDto(BaseModel):
     encodedkey: str

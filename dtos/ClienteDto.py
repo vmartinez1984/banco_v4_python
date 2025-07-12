@@ -17,6 +17,7 @@ class ClienteDtoIn(BaseModel):
 
 
 class ClienteDto(BaseModel):
+    id: int
     encodedkey: str
     nombre: str
     primerApellido: str
@@ -32,6 +33,7 @@ class ClienteDto(BaseModel):
 
     def to_dict(self) -> dict:
         return {
+            "id": self.id,
             "encodedKey": self.encodedkey,
             "nombre": self.nombre,
             "primerApellido": self.primerApellido,

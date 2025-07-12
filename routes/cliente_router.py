@@ -1,5 +1,4 @@
 from datetime import datetime
-from re import I
 from typing import List
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse

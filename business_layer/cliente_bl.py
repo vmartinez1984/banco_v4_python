@@ -51,6 +51,7 @@ class ClienteBl:
                 )
 
         return ClienteDto(
+            id=item.id,
             encodedkey=item.encodedkey,
             nombre=item.nombre,
             primerApellido=item.primer_apellido,
@@ -68,7 +69,7 @@ class ClienteBl:
     def _obtener_dtos(self, entities: List[ClienteEntity]) -> List[ClienteDto]:
         dtos = []
         for entity in entities:
-            print(entity.contactos)
+            # print(entity.contactos)
             dtos.append(self._obtener_dto(entity))
 
         return dtos

@@ -57,13 +57,16 @@ class ClienteRepository:
         return paginado
 
     def obtener_por_clave(self, encodedkey: str) -> ClienteEntity:
-        item = self.collection.find_one({"EncodedKey": encodedkey})
+        if encodedkey.isdigit():
+            item = self.collection.find_one({"Id": int(encodedkey)})
+        else:   
+            item = self.collection.find_one({"EncodedKey": encodedkey})
         if item is None:
             return None
 
         return self._obtener_entity(item)
     
-    # Metodos privados
+# Metodos privados
     def _obtener_entities(self, inventory) -> List[ClienteEntity]:
         entities = []
         for item in inventory:
@@ -82,7 +85,7 @@ class ClienteRepository:
         if item["Contactos"] != None:
             for contacto in item["Contactos"]:
                 contactos.append(
-                    ContactoEntity(
+                    ContactoEntity(                        
                         nombre=contacto["Nombre"],
                         alias=contacto["Alias"],
                         cuenta=contacto["Cuenta"],
